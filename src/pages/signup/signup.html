@@ -1,0 +1,35 @@
+<ion-content padding style="background-image: url(../../assets/imgs/gym.jpg);background-size: cover" >
+
+    <h4 style="text-align: center">  Become member of Arnold's Gym</h4>
+
+
+
+
+    <form #f="ngForm">
+
+        <ion-label class="item item-input"  style="background-color:whitesmoke">
+    <ion-input required type="text" placeholder="Email" [(ngModel)]="form.email" name = "email"></ion-input></ion-label>
+
+<br>
+
+<ion-label style="background-color:whitesmoke">
+    <ion-input required type="password" placeholder="Password" [(ngModel)]="form.password" name = "password"></ion-input></ion-label>
+    
+<br>
+
+    <button ion-button full class="btn" tappable (click)="register()">Register</button>
+
+    <div class="error-message">
+        <ion-label color="danger" text-wrap>{{errorRegisterMessage}}</ion-label>
+     </div>
+
+    
+     
+
+
+        <button ion-button secondary menuToggle>Toggle Menu</button>
+
+</form>
+
+
+</ion-content>

@@ -6,16 +6,32 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+import { AboutPage } from '../pages/about/about';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthProvider } from '../providers/auth/auth';
+import { LoginPage } from '../pages/login/login';
+import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule, HttpClient} from '@angular/common/http';
+import { SignupPage } from '../pages/signup/signup';
+import { LogoutPage } from '../pages/logout/logout';
+
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage,
+    SignupPage,
+    AboutPage,
+    LogoutPage
   ],
   imports: [
+    HttpModule,
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -23,12 +39,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage,
+    SignupPage,
+    AboutPage,
+    LogoutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider
   ]
 })
 export class AppModule {}
